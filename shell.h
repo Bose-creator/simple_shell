@@ -1,6 +1,10 @@
 #ifndef _SHELL_H_
 #define _SHELL_H_
 
+/*
+* file name: file name is shell.h
+* Auth: Bose Aletogbe and Samuel Agbontaen
+*/
 
 
 #include <fcntl.h>
@@ -24,11 +28,17 @@ char *name;
 int hist;
 
 /**
- * struct: a structure list_s of  new structure 
- * type that define a linked list.
- * @directory: the directory path.
- * @next: the pointer to another struct list_s.
+ * struct - the data structure that contains all
+		relevant data on runtime.
+ * @av: An argument vector
+ * @input: A command line that is written by the user
+ * @args: A tokens of the command line wriiten by user
+ * @status: the last status of the shell
+ * @counter: the lines counter
+ * @_environ: An environmental variable
+ * @pid: the process ID of the shell
  */
+
 typedef struct list_s
 {
 	char *dir;
@@ -36,9 +46,9 @@ typedef struct list_s
 } list_t;
 
 /**
- * struct builtin_s - A new struct type defining builtin commands.
- * @name: The name of the builtin command.
- * @f: A function pointer to the builtin command's function.
+ * struct builtin_s : the new structure type defining builtin commands.
+ * @name: a name of the builtin command.
+ * @f: The function pointer to the builtin_s command's function.
  */
 typedef struct builtin_s
 {
@@ -47,10 +57,10 @@ typedef struct builtin_s
 } builtin_t;
 
 /**
- * struct alias_s - A new struct defining aliases.
- * @name: The name of the alias.
- * @value: The value of the alias.
- * @next: A pointer to another struct alias_s.
+ * struct alias_s : the function of a new structure defining aliases.
+ * @name: The name of the alias define.
+ * @value: The value of the alias which is define.
+ * @next: The pointer to another struct alias_s command function.
  */
 typedef struct alias_s
 {
