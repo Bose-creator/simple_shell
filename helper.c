@@ -6,7 +6,7 @@ char *get_env_value(char *beginning, int len);
 void variable_replacement(char **args, int *exe_ret);
 
 /**
- * free_args - Frees up memory taken by args.
+ * free_args - That Frees up the memory taken by arguments.
  * @args: A null-terminated double pointer containing commands/arguments.
  * @front: A double pointer to the beginning of args.
  */
@@ -21,13 +21,13 @@ void free_args(char **args, char **front)
 }
 
 /**
- * get_pid - Gets the current process ID.
- * Description: Opens the stat file, a space-delimited file containing
+ * get_pid - To gets the current process ID.
+ * Description: It opens the stat file, a space-delimited file which contains
  *              information about the current process. The PID is the
- *              first word in the file. The function reads the PID into
+ *              first word in the file. The function that reads the PID into
  *              a buffer and replace the space at the end with a \0 byte.
  *
- * Return: The current process ID or NULL on failure.
+ * Return: To return the current process ID or NULL on failure.
  */
 char *get_pid(void)
 {
@@ -57,14 +57,15 @@ char *get_pid(void)
 }
 
 /**
- * get_env_value - Gets the value corresponding to an environmental variable.
- * @beginning: The environmental variable to search for.
- * @len: The length of the environmental variable to search for.
+ * get_env_value - To gets the value corresponding
+ * to the environmental variable.
+ * @beginning: An environmental variable to be searched for.
+ * @len: The length of the environmental variable to be search.
  *
  * Return: If the variable is not found - an empty string.
  *         Otherwise - the value of the environmental variable.
  *
- * Description: Variables are stored in the format VARIABLE=VALUE.
+ * Description: The variables are stored in the format VARIABLE=VALUE.
  */
 char *get_env_value(char *beginning, int len)
 {
@@ -94,11 +95,11 @@ char *get_env_value(char *beginning, int len)
 }
 
 /**
- * variable_replacement - Handles variable replacement.
- * @line: A double pointer containing the command and arguments.
+ * variable_replacement - A function that handles variable a replacement.
+ * @line: A double pointer which contains the command and the arguments.
  * @exe_ret: A pointer to the return value of the last executed command.
  *
- * Description: Replaces $$ with the current PID, $? with the return value
+ * Description: It replaces $$ with the current PID, $? with the return value
  *              of the last executed program, and envrionmental variables
  *              preceded by $ with their corresponding value.
  */

@@ -6,10 +6,10 @@ char *_strcat(char *dest, const char *src);
 char *_strncat(char *dest, const char *src, size_t n);
 
 /**
- * _strlen - Returns the length of a string.
- * @s: A pointer to the characters string.
+ * _strlen - A function that returns the length of a string.
+ * @s: A pointer to the string character.
  *
- * Return: The length of the character string.
+ * Return: To return the length of the character string.
  */
 int _strlen(const char *s)
 {
@@ -23,12 +23,12 @@ int _strlen(const char *s)
 }
 
 /**
- * _strcpy - Copies the string pointed to by src, including the
+ * _strcpy - That Copies the string pointed to by src, including the
  *           terminating null byte, to the buffer pointed by des.
- * @dest: Pointer to the destination of copied string.
- * @src: Pointer to the src of the source string.
+ * @dest: A Pointer to the destination of a copied string.
+ * @src: A Pointer to the src of the source string.
  *
- * Return: Pointer to dest.
+ * Return: to return Pointer to dest.
  */
 char *_strcpy(char *dest, const char *src)
 {
@@ -41,11 +41,11 @@ char *_strcpy(char *dest, const char *src)
 }
 
 /**
- * _strcat - Concantenates two strings.
- * @dest: Pointer to destination string.
- * @src: Pointer to source string.
+ * _strcat - ThatbConcantenates two strings.
+ * @dest: A Pointer to destination string.
+ * @src: A Pointer to source string.
  *
- * Return: Pointer to destination string.
+ * Return: A Pointer to destination string.
  */
 char *_strcat(char *dest, const char *src)
 {
@@ -65,13 +65,13 @@ char *_strcat(char *dest, const char *src)
 }
 
 /**
- * _strncat - Concantenates two strings where n number
- *            of bytes are copied from source.
+ * _strncat - That Concantenates two strings where n number
+ *            of bytes are copied from the source.
  * @dest: Pointer to destination string.
- * @src: Pointer to source string.
+ * @src: the Pointer to source string.
  * @n: n bytes to copy from src.
  *
- * Return: Pointer to destination string.
+ * Return: The Pointer to destination string.
  */
 char *_strncat(char *dest, const char *src, size_t n)
 {

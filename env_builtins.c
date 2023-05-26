@@ -5,14 +5,14 @@ int shellby_setenv(char **args, char __attribute__((__unused__)) **front);
 int shellby_unsetenv(char **args, char __attribute__((__unused__)) **front);
 
 /**
- * shellby_env - Prints the current environment.
- * @args: An array of arguments passed to the shell.
- * @front: A double pointer to the beginning of args.
+ * shellby_env - A function that Prints the current environment.
+ * @args: An array of the arguments that is passed to the shell.
+ * @front: A double pointer to the beginning of arguments.
  *
  * Return: If an error occurs - -1.
  *	   Otherwise - 0.
  *
- * Description: Prints one variable per line in the
+ * Description: To Prints one variable per line in the
  *              format 'variable'='value'.
  */
 int shellby_env(char **args, char __attribute__((__unused__)) **front)
@@ -34,9 +34,10 @@ int shellby_env(char **args, char __attribute__((__unused__)) **front)
 }
 
 /**
- * shellby_setenv - Changes or adds an environmental variable to the PATH.
- * @args: An array of arguments passed to the shell.
- * @front: A double pointer to the beginning of args.
+ * shellby_setenv - A function that changes or adds an environmental
+ * variable to the PATH.
+ * @args: An array of arguments which is passed to the shell.
+ * @front: A double pointer at the beginning of arguments.
  * Description: args[1] is the name of the new or existing PATH variable.
  *              args[2] is the value to set the new or changed variable to.
  *
@@ -88,10 +89,11 @@ int shellby_setenv(char **args, char __attribute__((__unused__)) **front)
 }
 
 /**
- * shellby_unsetenv - Deletes an environmental variable from the PATH.
- * @args: An array of arguments passed to the shell.
- * @front: A double pointer to the beginning of args.
- * Description: args[1] is the PATH variable to remove.
+ * shellby_unsetenv - A function that deletes an environmental
+ * variable from the PATH.
+ * @args: An array of arguments which is passed to the shell.
+ * @front: A double pointer to the beginning of arguments.
+ * Description: args[1] is the PATH variable to be remove.
  *
  * Return: If an error occurs - -1.
  *         Otherwise - 0.

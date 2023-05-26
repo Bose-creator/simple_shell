@@ -1,6 +1,11 @@
 #ifndef _SHELL_H_
 #define _SHELL_H_
 
+/*
+ * File: shell.h
+ * Auth: Bose Aletogbe
+ *	 Agbontaen Samuel
+ */
 
 
 #include <fcntl.h>
@@ -19,9 +24,9 @@
 /* Global environemnt */
 extern char **environ;
 /* Global program name */
-char *name;
+	*name;
 /* Global history counter */
-int hist;
+	 hist;
 
 /**
  * struct list_s - A new struct type defining a linked list.
