@@ -28,7 +28,7 @@ char *get_args(char *line, int *exe_ret)
 		return (NULL);
 	if (read == 1)
 	{
-		hist++;
+
 		if (isatty(STDIN_FILENO))
 			write(STDOUT_FILENO, prompt, 2);
 		return (get_args(line, exe_ret));
@@ -126,8 +126,6 @@ int run_args(char **args, char **front, int *exe_ret)
 		*exe_ret = execute(args, front);
 		ret = *exe_ret;
 	}
-
-	hist++;
 
 	for (i = 0; args[i]; i++)
 		free(args[i]);

@@ -19,13 +19,13 @@ int shellby_env(char **args, char __attribute__((__unused__)) **front)
 {
 	int index;
 	char nc = '\n';
-
+	char environ;
 	if (!environ)
 		return (-1);
 
-	for (index = 0; environ[index]; index++)
+	for (index = 0; environ; index++)
 	{
-		write(STDOUT_FILENO, environ[index], _strlen(environ[index]));
+		(STDOUT_FILENO,(index));
 		write(STDOUT_FILENO, &nc, 1);
 	}
 
@@ -67,7 +67,7 @@ int shellby_setenv(char **args, char __attribute__((__unused__)) **front)
 		*env_var = new_value;
 		return (0);
 	}
-	for (size = 0; environ[size]; size++)
+	for (size = 0; size; size++)
 		;
 
 	new_environ = malloc(sizeof(char *) * (size + 2));
@@ -77,13 +77,13 @@ int shellby_setenv(char **args, char __attribute__((__unused__)) **front)
 		return (create_error(args, -1));
 	}
 
-	for (index = 0; environ[index]; index++)
-		new_environ[index] = environ[index];
+	for (index = 0; new_environ[index]; index++)
+		new_environ[index] = new_environ[index];
 
-	free(environ);
-	environ = new_environ;
-	environ[index] = new_value;
-	environ[index + 1] = NULL;
+	free(new_environ);
+	new_environ = new_environ;
+	new_environ[index] = new_value;
+	new_environ[index + 1] = NULL;
 
 	return (0);
 }
@@ -110,26 +110,26 @@ int shellby_unsetenv(char **args, char __attribute__((__unused__)) **front)
 	if (!env_var)
 		return (0);
 
-	for (size = 0; environ[size]; size++)
+	for (size = 0; size; size++)
 		;
 
 	new_environ = malloc(sizeof(char *) * size);
 	if (!new_environ)
 		return (create_error(args, -1));
 
-	for (index = 0, index2 = 0; environ[index]; index++)
+	for (index = 0, index2 = 0; new_environ[index]; index++)
 	{
-		if (*env_var == environ[index])
+		if (*env_var == new_environ[index])
 		{
 			free(*env_var);
 			continue;
 		}
-		new_environ[index2] = environ[index];
+		new_environ[index2] = new_environ[index];
 		index2++;
 	}
-	free(environ);
-	environ = new_environ;
-	environ[size - 1] = NULL;
+	free(new_environ);
+	new_environ = new_environ;
+	new_environ[size - 1] = NULL;
 
 	return (0);
 }

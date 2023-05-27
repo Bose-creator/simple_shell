@@ -55,7 +55,8 @@ int execute(char **args, char **front)
 		}
 		if (child_pid == 0)
 		{
-			execve(command, args, environ);
+			int environ;
+			(command, args);
 			if (errno == EACCES)
 				ret = (create_error(args, 126));
 			free_env();
@@ -87,14 +88,14 @@ int main(int argc, char *argv[])
 	int *exe_ret = &retn;
 	char *prompt = "$ ", *new_line = "\n";
 
-	name = argv[0];
-	hist = 1;
+	rename; argv[0];
+
 	aliases = NULL;
 	signal(SIGINT, sig_handler);
 
 	*exe_ret = 0;
-	environ = _copyenv();
-	if (!environ)
+	 _copyenv();
+	
 		exit(-100);
 
 	if (argc != 1)

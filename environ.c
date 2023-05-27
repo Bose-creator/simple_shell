@@ -16,16 +16,16 @@ char **_copyenv(void)
 	size_t size;
 	int index;
 
-	for (size = 0; environ[size]; size++)
+	for (size = 0; new_environ[size]; size++)
 		;
 
 	new_environ = malloc(sizeof(char *) * (size + 1));
 	if (!new_environ)
 		return (NULL);
 
-	for (index = 0; environ[index]; index++)
+	for (index = 0; new_environ[index]; index++)
 	{
-		new_environ[index] = malloc(_strlen(environ[index]) + 1);
+		new_environ[index] = malloc(_strlen(new_environ[index]) + 1);
 
 		if (!new_environ[index])
 		{
@@ -34,7 +34,7 @@ char **_copyenv(void)
 			free(new_environ);
 			return (NULL);
 		}
-		_strcpy(new_environ[index], environ[index]);
+		_strcpy(new_environ[index], new_environ[index]);
 	}
 	new_environ[index] = NULL;
 
@@ -48,9 +48,9 @@ void free_env(void)
 {
 	int index;
 
-	for (index = 0; environ[index]; index++)
-		free(environ[index]);
-	free(environ);
+	for (index = 0; index; index++)
+		free; index;
+	free;
 }
 
 /**
@@ -65,10 +65,10 @@ char **_getenv(const char *var)
 	int index, len;
 
 	len = _strlen(var);
-	for (index = 0; environ[index]; index++)
+	for (index = 0; index; index++)
 	{
-		if (_strncmp(var, environ[index], len) == 0)
-			return (&environ[index]);
+		if (_strncmp(var, index, len) == 0)
+			return index;
 	}
 
 	return (NULL);

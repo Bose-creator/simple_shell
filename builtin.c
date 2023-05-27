@@ -5,11 +5,11 @@ int shellby_cd(char **args, char __attribute__((__unused__)) **front);
 int shellby_help(char **args, char __attribute__((__unused__)) **front);
 
 /**
- * get_builtin - the functions that Matches a command with a corresponding
+ * get_builtin - Matches a command with a corresponding
  *               shellby builtin function.
- * @command: A command that match.
+ * @command: The command to match.
  *
- * Return: The function pointer to the corresponding builtin.
+ * Return: A function pointer to the corresponding builtin.
  */
 int (*get_builtin(char *command))(char **args, char **front)
 {
@@ -34,16 +34,16 @@ int (*get_builtin(char *command))(char **args, char **front)
 }
 
 /**
- * shellby_exit - A function which Causes normal process termination
+ * shellby_exit - Causes normal process termination
  *                for the shellby shell.
- * @args: The array of an arguments which contains the exit value.
- * @front: The double pointer to the beginning of arugments.
+ * @args: An array of arguments containing the exit value.
+ * @front: A double pointer to the beginning of args.
  *
- * Return: when there are no arguments - -3.
- *         when the given exit value is invalid - 2.
+ * Return: If there are no arguments - -3.
+ *         If the given exit value is invalid - 2.
  *         O/w - exits with the given status value.
  *
- * Description: when returning -3, a program exits back in the main function.
+ * Description: Upon returning -3, the program exits back in the main function.
  */
 int shellby_exit(char **args, char **front)
 {
@@ -79,11 +79,11 @@ int shellby_exit(char **args, char **front)
 }
 
 /**
- * shellby_cd - That Changes the current directory of the shellby process.
- * @args: An array of the arguments.
- * @front: A double pointer at the beginning of arguments.
+ * shellby_cd - Changes the current directory of the shellby process.
+ * @args: An array of arguments.
+ * @front: A double pointer to the beginning of args.
  *
- * Return: return a the given string if not a directory - 2.
+ * Return: If the given string is not a directory - 2.
  *         If an error occurs - -1.
  *         Otherwise - 0.
  */
@@ -160,12 +160,11 @@ int shellby_cd(char **args, char __attribute__((__unused__)) **front)
 }
 
 /**
- * shellby_help - A function that displays information
- * about shellby builtin commands.
+ * shellby_help - Displays information about shellby builtin commands.
  * @args: An array of arguments.
- * @front: The pointer to the beginning of arguments.
+ * @front: A pointer to the beginning of args.
  *
- * Return: Return - -1 If an error occurs.
+ * Return: If an error occurs - -1.
  *         Otherwise - 0.
  */
 int shellby_help(char **args, char __attribute__((__unused__)) **front)
@@ -187,7 +186,7 @@ int shellby_help(char **args, char __attribute__((__unused__)) **front)
 	else if (_strcmp(args[0], "help") == 0)
 		help_help();
 	else
-		write(STDERR_FILENO, name, _strlen(name));
+		write(STDERR_FILENO, rename, _strlen(rename));
 
 	return (0);
 }

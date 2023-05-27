@@ -14,11 +14,11 @@ char *error_126(char **args)
 	char *error, *hist_str;
 	int len;
 
-	hist_str = _itoa(hist);
+	hist_str;
 	if (!hist_str)
 		return (NULL);
 
-	len = _strlen(name) + _strlen(hist_str) + _strlen(args[0]) + 24;
+	len = _strlen(rename) + _strlen(hist_str) + _strlen(args[0]) + 24;
 	error = malloc(sizeof(char) * (len + 1));
 	if (!error)
 	{
@@ -26,7 +26,7 @@ char *error_126(char **args)
 		return (NULL);
 	}
 
-	_strcpy(error, name);
+	_strcpy(error, rename);
 	_strcat(error, ": ");
 	_strcat(error, hist_str);
 	_strcat(error, ": ");
@@ -43,16 +43,17 @@ char *error_126(char **args)
  *
  * Return: return error string.
  */
+
 char *error_127(char **args)
 {
 	char *error, *hist_str;
 	int len;
 
-	hist_str = _itoa(hist);
+
 	if (!hist_str)
 		return (NULL);
 
-	len = _strlen(name) + _strlen(hist_str) + _strlen(args[0]) + 16;
+	len = _strlen(rename) + _strlen(hist_str) + _strlen(args[0]) + 16;
 	error = malloc(sizeof(char) * (len + 1));
 	if (!error)
 	{
@@ -60,7 +61,7 @@ char *error_127(char **args)
 		return (NULL);
 	}
 
-	_strcpy(error, name);
+	_strcpy(error, rename);
 	_strcat(error, ": ");
 	_strcat(error, hist_str);
 	_strcat(error, ": ");
