@@ -3,7 +3,6 @@
 int shellby_alias(char **args, char __attribute__((__unused__)) **front);
 void set_alias(char *var_name, char *value);
 void print_alias(alias_t *alias);
-
 /**
  * shellby_alias - A builtin command which either prints all aliases,
  * specific aliases, or sets an alias.
